@@ -148,7 +148,7 @@ bindsym $mod+Shift+r restart
 exec --no-startup-id synclient VertScrollDelta=-30
 
 # Background
-exec_always feh --bg-scale /home/chris/Documents/Backgrounds/20934.jpg
+exec_always feh --bg-scale /home/chris/setup/backgrounds/pacific-northwest-1.jpg
 # exec_always sh ~/.fehbg
 
 # System for starting/stopping session

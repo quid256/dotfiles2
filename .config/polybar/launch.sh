@@ -9,5 +9,5 @@ killall -q polybar
 while pgrep -u "$(whoami)" -x polybar >/dev/null; do sleep 1; done
 
 # Launch bar1 and bar2
-polybar -c ~/.config/polybar/config.ini main &
-polybar -c ~/.config/polybar/config.ini secondary &
+polybar -c <(cat ~/.config/polybar/config.ini | sed 's/eDP-1/LVDS-1/g') main &
+# polybar -c ~/.config/polybar/config.ini secondary &
