@@ -1,0 +1,6 @@
+[options]
+font = Iosevka Custom 12
+
+
+[colors]
+background = rgba(10, 22, 25, 0.90)

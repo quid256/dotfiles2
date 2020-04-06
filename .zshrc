@@ -152,8 +152,6 @@ export PATH="/home/chris/.pyenv/bin:$PATH"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
-export XDG_CURRENT_DESKTOP="KDE"
-
 export PATH="$HOME/.cargo/bin:$PATH"
 
 function gh() {
