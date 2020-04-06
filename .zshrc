@@ -156,8 +156,9 @@ export XDG_CURRENT_DESKTOP="KDE"
 
 export PATH="$HOME/.cargo/bin:$PATH"
 
+function gh() {
+    git clone http://github.com/$1
+}
+
 alias dotfiles='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
-
-
-
 
