@@ -50,7 +50,7 @@ set expandtab
 set tabstop=4
 set softtabstop=4
 
-set cursorline
+set nocursorline
 set smartindent
 set autoindent
 set fileformat=unix
@@ -69,6 +69,8 @@ endif
 
 set background=dark
 colorscheme hybrid_material
+
+hi Normal guibg=None ctermbg=None
 
 map! <silent> <expr> fd pumvisible() ? "<Esc><Esc>" : "<Esc>"
 
