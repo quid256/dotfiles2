@@ -1,0 +1,170 @@
+Sat 21 Mar 2020 02:50:59 PM CDT
+/home/chris/.local/share/applications:/home/chris/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+Sat 21 Mar 2020 03:04:40 PM CDT
+/home/chris/.local/share/applications:/home/chris/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+Sat 21 Mar 2020 03:11:46 PM CDT
+/home/chris/.local/share/applications:/home/chris/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+Sat 21 Mar 2020 03:12:09 PM CDT
+/home/chris/.local/share/applications:/home/chris/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+Sat 21 Mar 2020 03:12:21 PM CDT
+/home/chris/.local/share/applications:/home/chris/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+Sat 21 Mar 2020 03:12:27 PM CDT
+/home/chris/.local/share/applications:/home/chris/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+Sat 21 Mar 2020 03:13:01 PM CDT
+/home/chris/.local/share/applications:/home/chris/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+Sat 21 Mar 2020 03:13:13 PM CDT
+/home/chris/.local/share/applications:/home/chris/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+Sat 21 Mar 2020 03:17:36 PM CDT
+/home/chris/.local/share/applications:/home/chris/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+Sat 21 Mar 2020 03:18:33 PM CDT
+/home/chris/.local/share/applications:/home/chris/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+Sat 21 Mar 2020 03:20:27 PM CDT
+/home/chris/.local/share/applications:/home/chris/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+Sat 21 Mar 2020 04:16:27 PM CDT
+/home/chris/.local/share/applications:/home/chris/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+Sat 21 Mar 2020 04:31:25 PM CDT
+/home/chris/.local/share/applications:/home/chris/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+Sat 21 Mar 2020 04:34:52 PM CDT
+/home/chris/.local/share/applications:/home/chris/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+Sat 21 Mar 2020 04:35:59 PM CDT
+/home/chris/.local/share/applications:/home/chris/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+Sat 21 Mar 2020 04:36:27 PM CDT
+/home/chris/.local/share/applications:/home/chris/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+Sat 21 Mar 2020 04:37:19 PM CDT
+/home/chris/.local/share/applications:/home/chris/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+Sat 21 Mar 2020 04:38:39 PM CDT
+/home/chris/.local/share/applications:/home/chris/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+Sat 21 Mar 2020 04:39:00 PM CDT
+/home/chris/.local/share/applications:/home/chris/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+Sat 21 Mar 2020 04:46:18 PM CDT
+/home/chris/.local/share/applications:/home/chris/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+Sat 21 Mar 2020 06:34:13 PM CDT
+/home/chris/.local/share/applications:/home/chris/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+Sat 21 Mar 2020 06:34:34 PM CDT
+/home/chris/.local/share/applications:/home/chris/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+Sat 21 Mar 2020 06:44:43 PM CDT
+/home/chris/.local/share/applications:/home/chris/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+Sat 21 Mar 2020 06:50:28 PM CDT
+/home/chris/.local/share/applications:/home/chris/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+Sat 21 Mar 2020 06:55:13 PM CDT
+/home/chris/.local/share/applications:/home/chris/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+Sat 21 Mar 2020 06:55:16 PM CDT
+/home/chris/.local/share/applications:/home/chris/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+Sat 21 Mar 2020 06:55:19 PM CDT
+/home/chris/.local/share/applications:/home/chris/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+Sun 22 Mar 2020 07:07:47 AM CDT
+/home/chris/.local/share/applications:/home/chris/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+Sun 22 Mar 2020 01:35:15 PM CDT
+/home/chris/.local/share/applications:/home/chris/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+Sun 22 Mar 2020 01:35:20 PM CDT
+/home/chris/.local/share/applications:/home/chris/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+Sun 22 Mar 2020 03:02:10 PM CDT
+/home/chris/.local/share/applications:/home/chris/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+Sun 22 Mar 2020 03:07:45 PM CDT
+/home/chris/.local/share/applications:/home/chris/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+Sun 22 Mar 2020 03:13:35 PM CDT
+/home/chris/.local/share/applications:/home/chris/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+Sun 22 Mar 2020 03:15:34 PM CDT
+/home/chris/.local/share/applications:/home/chris/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+Sun 22 Mar 2020 03:16:47 PM CDT
+/home/chris/.local/share/applications:/home/chris/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+Sun 22 Mar 2020 03:16:57 PM CDT
+/home/chris/.local/share/applications:/home/chris/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+Sun 22 Mar 2020 03:18:18 PM CDT
+/home/chris/.local/share/applications:/home/chris/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+Sun 22 Mar 2020 03:19:18 PM CDT
+/home/chris/.local/share/applications:/home/chris/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+Sun 22 Mar 2020 06:55:48 PM CDT
+/home/chris/.local/share/applications:/home/chris/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+Sun 22 Mar 2020 06:55:52 PM CDT
+/home/chris/.local/share/applications:/home/chris/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+Sun 22 Mar 2020 07:07:36 PM CDT
+/home/chris/.local/share/applications:/home/chris/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+Sun 22 Mar 2020 07:08:52 PM CDT
+/home/chris/.local/share/applications:/home/chris/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+Sun 22 Mar 2020 07:10:20 PM CDT
+/home/chris/.local/share/applications:/home/chris/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+Sun 22 Mar 2020 09:20:56 PM CDT
+/home/chris/.local/share/applications:/home/chris/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+Sun 22 Mar 2020 09:23:26 PM CDT
+/home/chris/.local/share/applications:/home/chris/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+Sun 22 Mar 2020 09:25:56 PM CDT
+/home/chris/.local/share/applications:/home/chris/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+Sun 22 Mar 2020 09:27:51 PM CDT
+/home/chris/.local/share/applications:/home/chris/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+Sun 22 Mar 2020 09:56:20 PM CDT
+/home/chris/.local/share/applications:/home/chris/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+Mon 23 Mar 2020 01:46:19 PM CDT
+/home/chris/.local/share/applications:/home/chris/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+Mon 23 Mar 2020 01:58:28 PM CDT
+/home/chris/.local/share/applications:/home/chris/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+Mon 23 Mar 2020 02:16:42 PM CDT
+/home/chris/.local/share/applications:/home/chris/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+Mon 23 Mar 2020 02:30:27 PM CDT
+/home/chris/.local/share/applications:/home/chris/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+Mon 23 Mar 2020 02:38:10 PM CDT
+/home/chris/.local/share/applications:/home/chris/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+Mon 23 Mar 2020 03:12:42 PM CDT
+/home/chris/.local/share/applications:/home/chris/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+Mon 23 Mar 2020 03:16:11 PM CDT
+/home/chris/.local/share/applications:/home/chris/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+Mon 23 Mar 2020 03:49:58 PM CDT
+/home/chris/.local/share/applications:/home/chris/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+Mon 23 Mar 2020 05:26:30 PM CDT
+/home/chris/.local/share/applications:/home/chris/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+Mon 23 Mar 2020 05:28:20 PM CDT
+/home/chris/.local/share/applications:/home/chris/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+Mon 23 Mar 2020 05:53:51 PM CDT
+/home/chris/.local/share/applications:/home/chris/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+Mon 23 Mar 2020 09:08:07 PM CDT
+/home/chris/.local/share/applications:/home/chris/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+Mon 23 Mar 2020 09:08:09 PM CDT
+/home/chris/.local/share/applications:/home/chris/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+Tue 24 Mar 2020 12:45:18 PM CDT
+/home/chris/.local/share/applications:/home/chris/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+Tue 24 Mar 2020 01:05:20 PM CDT
+/home/chris/.local/share/applications:/home/chris/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+Tue 24 Mar 2020 10:29:46 PM CDT
+/home/chris/.local/share/applications:/home/chris/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+Tue 24 Mar 2020 10:59:33 PM CDT
+/home/chris/.local/share/applications:/home/chris/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+Tue 24 Mar 2020 11:09:14 PM CDT
+/home/chris/.local/share/applications:/home/chris/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+Tue 24 Mar 2020 11:09:21 PM CDT
+/home/chris/.local/share/applications:/home/chris/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+Tue 24 Mar 2020 11:09:27 PM CDT
+/home/chris/.local/share/applications:/home/chris/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+Tue 24 Mar 2020 11:15:23 PM CDT
+/home/chris/.local/share/applications:/home/chris/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+Tue 24 Mar 2020 11:18:09 PM CDT
+/home/chris/.local/share/applications:/home/chris/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+Tue 24 Mar 2020 11:34:07 PM CDT
+/home/chris/.local/share/applications:/home/chris/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+Tue 24 Mar 2020 11:43:30 PM CDT
+/home/chris/.local/share/applications:/home/chris/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+Tue 24 Mar 2020 11:43:46 PM CDT
+/home/chris/.local/share/applications:/home/chris/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+Tue 24 Mar 2020 11:48:31 PM CDT
+/home/chris/.local/share/applications:/home/chris/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+Tue 24 Mar 2020 11:48:44 PM CDT
+/home/chris/.local/share/applications:/home/chris/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+Tue 24 Mar 2020 11:51:50 PM CDT
+/home/chris/.local/share/applications:/home/chris/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+Tue 24 Mar 2020 11:52:18 PM CDT
+/home/chris/.local/share/applications:/home/chris/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+Wed 25 Mar 2020 12:02:44 AM CDT
+/home/chris/.local/share/applications:/home/chris/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+Wed 25 Mar 2020 12:28:04 AM CDT
+/home/chris/.local/share/applications:/home/chris/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+Wed 25 Mar 2020 01:10:24 AM CDT
+/home/chris/.local/share/applications:/home/chris/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+Wed 25 Mar 2020 02:19:18 AM CDT
+/home/chris/.local/share/applications:/home/chris/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+Wed 25 Mar 2020 02:47:35 AM CDT
+/home/chris/.local/share/applications:/home/chris/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+Wed 25 Mar 2020 03:17:57 AM CDT
+/home/chris/.local/share/applications:/home/chris/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+Wed 25 Mar 2020 03:18:23 AM CDT
+/home/chris/.local/share/applications:/home/chris/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+Wed 25 Mar 2020 03:19:21 AM CDT
+/home/chris/.local/share/applications:/home/chris/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
