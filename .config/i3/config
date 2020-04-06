@@ -31,7 +31,7 @@ font pango:Iosevka Custom 13
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec konsole
+bindsym $mod+Return exec termite
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -198,7 +198,7 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-bindsym $mod+n exec --no-startup-id plasmawindowed org.kde.plasma.networkmanagement
+# bindsym $mod+n exec --no-startup-id plasmawindowed org.kde.plasma.networkmanagement
 
 for_window [title="Plasmoidviewer"] floating enable, border none
 for_window [title="plasmawindowed"] floating enable, border none
