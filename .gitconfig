@@ -1,0 +1,5 @@
+[credential]
+	helper = cache
+
+[alias]
+    l = log --branches --remotes --tags --graph --decorate --notes HEAD
