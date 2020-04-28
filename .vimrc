@@ -1,8 +1,8 @@
 " Install vim-plug
 if empty(glob('~/.vim/autoload/plug.vim'))
-	silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-	  \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-	autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+    silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+        \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
 " Plug-ins
@@ -18,30 +18,42 @@ Plug 'flazz/vim-colorschemes' " Vim colorschemes
 
 Plug 'Townk/vim-autoclose' " Auto-close braces
 
-" Plug 'vim-airline/vim-airline' "Powerline (having some trouble integrating
-" with color scheme
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+
+Plug 'airblade/vim-gitgutter'
+
+Plug 'gko/vim-coloresque'
+
+Plug 'junegunn/goyo.vim'
 
 Plug 'ctrlpvim/ctrlp.vim'
 
 Plug 'christoomey/vim-tmux-navigator'
 " Plug 'morhetz/gruvbox'
+"
+"
 
-Plug 'kristijanhusak/vim-hybrid-material'
+
+" Plug 'kristijanhusak/vim-hybrid-material'
+Plug 'arcticicestudio/nord-vim'
 
 Plug 'ryanoasis/vim-devicons'
 
 Plug 'xolox/vim-notes'
 Plug 'xolox/vim-misc'
 
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+
 call plug#end()
 
 let python_highlight_all=1
 
-highlight BadWhitespace ctermbg=red guibg=darkred
+highlight BadWhitespace ctermbg=red guibg=#BF616A
 au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 
 set encoding=utf-8
-set relativenumber
+" set relativenumber
 set number
 set mouse=a
 
@@ -57,20 +69,36 @@ set fileformat=unix
 
 let g:enable_bold_font = 1
 let g:enable_italic_font = 1
-let g:hybrid_transparent_background = 1
+let g:nord_uniform_status_lines = 0
+
+let g:airline_powerline_fonts = 1
+let g:airline_skip_empty_sections = 1
+
+" let g:gitgutter_sign_added = '烙'
+" let g:gitgutter_sign_modified = 'ﯽ'
+
+let g:gitgutter_sign_added = '▎'
+let g:gitgutter_sign_modified = '▎'
+let g:gitgutter_sign_removed = '▁'
+let g:gitgutter_sign_removed_first_line = '▔'
+let g:gitgutter_sign_modified_removed = '▎▔'
+
+let g:go_version_warning = 0
+colorscheme nord
+set background=dark
+
 
 if (has("nvim"))
     let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+    hi MatchParen gui=bold guifg=#88C0D0 guibg=none
 endif
 
 if (has("termguicolors"))
     set termguicolors
 endif
 
-set background=dark
-colorscheme hybrid_material
 
-hi Normal guibg=None ctermbg=None
+" hi Normal ctermbg=None
 
 map! <silent> <expr> fd pumvisible() ? "<Esc><Esc>" : "<Esc>"
 
@@ -89,12 +117,6 @@ nnoremap <C-O> <C-W><
 nnoremap <C-U> <C-W>+
 nnoremap <C-I> <C-W>-
 
-inoremap <C-S> <Esc>:w<CR>
-vnoremap <C-S> <Esc>:w<CR>
-
-inoremap <C-W> <Esc>:q<CR>
-vnoremap <C-W> <Esc>:q<CR>
-
 " Remap ; to Ctrl-P
 nmap ; :CtrlPBuffer<CR>
 
@@ -102,7 +124,7 @@ nmap ; :CtrlPBuffer<CR>
 nnoremap <leader>ne :NERDTreeToggle<cr>
 
 if !has('nvim')
-	set ttymouse=xterm2
+    set ttymouse=xterm2
 endif
 
 set pastetoggle=<Insert>

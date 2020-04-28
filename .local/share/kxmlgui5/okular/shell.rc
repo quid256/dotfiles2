@@ -1,0 +1,74 @@
+<!DOCTYPE kpartgui SYSTEM 'kpartgui.dtd'>
+<kpartgui name="okular_shell" version="7">
+ <MenuBar>
+  <Menu name="file">
+   <DefineGroup name="file_open" append="open_merge"/>
+   <DefineGroup name="file_save" append="save_merge"/>
+   <DefineGroup name="file_print" append="print_merge"/>
+  </Menu>
+  <!--Menu name="view" >
+   <Action name="fullscreen" />
+  </Menu-->
+  <Menu name="settings">
+   <DefineGroup name="show_merge" append="show_merge"/>
+   <DefineGroup name="configure_merge" append="configure_merge"/>
+  </Menu>
+  <Merge/>
+  <Menu name="help">
+   <DefineGroup name="about_merge" append="about_merge"/>
+  </Menu>
+ </MenuBar>
+ <ToolBar noMerge="1" name="mainToolBar">
+  <text>Main Toolbar</text>
+  <!--Action name="file_open_recent" /-->
+  <!--Action name="file_print" /-->
+ </ToolBar>
+ <ActionProperties scheme="Default">
+  <Action shortcut="Ctrl+W; " name="file_close"/>
+  <Action shortcut="Ctrl+Shift+O" name="file_open_recent"/>
+  <Action shortcut="" name="file_quit"/>
+  <Action shortcut="" name="fullscreen"/>
+  <Action shortcut="" name="help_about_app"/>
+  <Action shortcut="" name="help_about_kde"/>
+  <Action shortcut="" name="help_contents"/>
+  <Action shortcut="" name="help_donate"/>
+  <Action shortcut="" name="help_report_bug"/>
+  <Action shortcut="" name="help_whats_this"/>
+  <Action shortcut="" name="options_configure_keybinding"/>
+  <Action shortcut="" name="options_configure_toolbars"/>
+  <Action shortcut=":" name="options_show_menubar"/>
+  <Action shortcut="" name="switch_application_language"/>
+  <Action shortcut="; " name="tab-next"/>
+  <Action shortcut="; " name="tab-previous"/>
+ </ActionProperties>
+ <ActionProperties scheme="Vimkular">
+  <Action shortcut="Ctrl+W" name="file_close"/>
+  <Action shortcut="Ctrl+O" name="file_open"/>
+  <Action shortcut="Ctrl+P" name="file_print"/>
+  <Action shortcut=":" name="options_show_menubar"/>
+  <Action shortcut="Ctrl+Shift+O" name="file_open_recent"/>
+ </ActionProperties>
+ <ActionProperties scheme="Testing">
+  <Action shortcut="Ctrl+O" name="file_open"/>
+ </ActionProperties>
+ <ActionProperties scheme="stuffs">
+  <Action shortcut="Ctrl+W; Ctrl+Esc" name="file_close"/>
+  <Action shortcut="Ctrl+O" name="file_open"/>
+  <Action shortcut="" name="file_open_recent"/>
+  <Action shortcut="Ctrl+P" name="file_print"/>
+  <Action shortcut="Ctrl+Q" name="file_quit"/>
+  <Action shortcut="Ctrl+Shift+F" name="fullscreen"/>
+  <Action shortcut="" name="help_about_app"/>
+  <Action shortcut="" name="help_about_kde"/>
+  <Action shortcut="F1" name="help_contents"/>
+  <Action shortcut="" name="help_donate"/>
+  <Action shortcut="" name="help_report_bug"/>
+  <Action shortcut="Shift+F1" name="help_whats_this"/>
+  <Action shortcut="" name="options_configure_keybinding"/>
+  <Action shortcut="" name="options_configure_toolbars"/>
+  <Action shortcut="Ctrl+M" name="options_show_menubar"/>
+  <Action shortcut="" name="switch_application_language"/>
+  <Action shortcut="Ctrl+PgDown; Ctrl+]" name="tab-next"/>
+  <Action shortcut="Ctrl+PgUp; Ctrl+[" name="tab-previous"/>
+ </ActionProperties>
+</kpartgui>

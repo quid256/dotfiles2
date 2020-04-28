@@ -153,6 +153,8 @@ eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
 export PATH="$HOME/.cargo/bin:$PATH"
+export PATH="/usr/local/go/bin/:$PATH"
+export PATH="/home/chris/go/bin/:$PATH"
 
 function gh() {
     git clone http://github.com/$1
