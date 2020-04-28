@@ -19,6 +19,10 @@ class Commander:
         for cm in closed_monitors:
             r("xrandr --output {mon} --off".format(mon=cm))
 
+    def school_drive_backup(self):
+        """ copy local files to school gdrive """
+        r("konsole -e /home/chris/.config/rclone/backup-school.sh")
+
 if __name__ == '__main__':
     commands = [cmd for cmd in dir(Commander) if not cmd.startswith('_')]
     res = r("echo \"{}\" | rofi -sep '|' -dmenu -p \"cmd\"".format("|".join(commands)))
