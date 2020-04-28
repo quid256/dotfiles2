@@ -61,6 +61,7 @@ let g:hybrid_transparent_background = 1
 
 if (has("nvim"))
     let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+    hi Normal guibg=None
 endif
 
 if (has("termguicolors"))
@@ -70,7 +71,7 @@ endif
 set background=dark
 colorscheme hybrid_material
 
-hi Normal guibg=None ctermbg=None
+hi Normal ctermbg=None
 
 map! <silent> <expr> fd pumvisible() ? "<Esc><Esc>" : "<Esc>"
 

@@ -23,8 +23,7 @@ class Shutdowner:
         r("systemctl suspend")
 
     def lock_suspend(self):
-        r("i3lock")
-        r("systemctl suspend")
+        r("i3lock && systemctl suspend")
 
 
 
