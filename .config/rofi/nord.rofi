@@ -1,0 +1,54 @@
+* {
+  background-color: #2E3440;
+  border-color: #3B4252;
+  text-color: #81A1C1;
+  spacing: 0;
+  width: 780px;
+}
+
+window {
+    font: "Ubuntu 16";
+}
+
+inputbar {
+  border: 0 0 1px 0;
+  children: [prompt,entry];
+}
+
+prompt {
+  padding: 16px;
+  border: 0 1px 0 0;
+  text-color: #A3BE8C;
+}
+
+textbox {
+  background-color: #3B4252;
+  border: 0 0 1px 0;
+  border-color: #3B4252;
+  padding: 8px 16px;
+}
+
+entry {
+  padding: 16px;
+  text-color: #D8DEE9;
+}
+
+listview {
+  cycle: false;
+  margin: 0 0 -1px 0;
+  scrollbar: false;
+}
+
+element {
+  border: 0 0 1px 0;
+  padding: 12px;
+}
+
+
+element-icon {
+    size: 1.2px;
+}
+
+element selected {
+  background-color: #3B4252;
+}
