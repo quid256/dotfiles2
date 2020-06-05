@@ -149,23 +149,6 @@ exec --no-startup-id synclient VertScrollDelta=-30
 
 # Background
 exec_always feh --bg-scale /home/chris/.wallpaper/bg-3.png
-# exec_always --no-startup-id nitrogen --restore
-# exec_always sh ~/.fehbg
-
-# System for starting/stopping session
-# set $mode_system System (l) lock, (e) logout, (s) shutdown, (h) hibernate, (r) reboot, (Shift+s) suspend
-# mode "$mode_system" {
-#     bindsym l exec --no-startup-id i3lock, mode "default"
-#     bindsym e exec --no-startup-id i3-msg exit, mode "default"
-#     bindsym s exec --no-startup-id systemctl poweroff, mode "default"
-#     bindsym r exec --no-startup-id systemctl reboot, mode "default"
-#     bindsym Shift+s exec --no-startup-id systemctl suspend, mode "default"
-#
-#     # back to normal: Enter or Escape
-#     bindsym Return mode "default"
-#     bindsym Escape mode "default"
-# }
-# bindsym $mod+Shift+e mode "$mode_system"
 
 bindsym $mod+Shift+e exec ~/.config/i3/shutdown.py
 
@@ -205,41 +188,11 @@ for_window [title="Plasmoidviewer"] floating enable, border none
 for_window [title="plasmawindowed"] floating enable, border none
 for_window [title="Networks"] floating enable, border none
 
-# client.focused #586e75 #586e75 #fdf6e3 #268bd2
-# client.focused_inactive #073642 #073642 #93a1a1 #002b36
-# client.unfocused #002b36 #002b36 #586e75 #002b36
-# client.urgent #dc322f #dc322f #fdf6e3 #dc322f
-#
-#
-#class                      border         backgr	  text	       indicator
-# client.focused		        #2C313D        #2e3440    #fdf6e3  #fdf6e3
-# client.focused_inactive	    #2C313D        #303743    #fdf6e3  #fdf6e3
-# client.unfocused	        #2C313D        #303743    #fdf6e3  #fdf6e3
-# client.urgent		        #fdf6e3    #282d37    #fdf6e3  #fdf6e3
-# client.placeholder	        #fdf6e3    #282D37    #fdf6e3  #fdf6e3
-#
-#
-client.focused #81A1C1 #81A1C1 #2E3440 #D08770
-client.focused_inactive #4C566A #4C566A #ECEFF4 #D08770
+# Nord colors
+client.focused #81A1C1 #81A1C1 #2E3440 #8FBCBB
+client.focused_inactive #4C566A #4C566A #ECEFF4 #8FBCBB
 client.unfocused #3B4252 #3B4252 #ECEFF4 #D08770
 client.urgent #BF616A #BF616A #ECEFF4 #D08770
-
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
-# bar {
-#   font pango:Iosevka Custom 14
-#   tray_output primary
-#   status_command i3blocks -c ~/.config/i3/i3blocks.conf
-#   colors {
-#     separator #586e75
-#     background #002b36
-#     statusline #aea79f
-#     focused_workspace #586e75 #586e75 #ffffff #FFFFFF
-#     active_workspace #073642 #073642 #ffffff #aea79f
-#     inactive_workspace #002b36 #002b36 #aea79f #AAAAAA
-#     urgent_workspace #77216f #77216f #ffffff #ffffff
-#   }
-# }
 
 # Launch Polybar
 exec_always --no-startup-id ~/.config/polybar/launch.sh
@@ -268,7 +221,7 @@ bindsym XF86AudioPrev exec playerctl previous
 gaps inner 15
 gaps outer 25
 gaps top 0
-for_window [class="^.*"] border pixel 0
+for_window [class="^.*"] border pixel 3
 # exec --no-startup-id compton -b \
 #     --shadow --shadow-radius=15 --no-dock-shadow --clear-shadow \
 #     --fading --fade-in-step=0.05 --fade-out-step=0.05
