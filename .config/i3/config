@@ -189,10 +189,12 @@ for_window [title="plasmawindowed"] floating enable, border none
 for_window [title="Networks"] floating enable, border none
 
 # Nord colors
-client.focused #81A1C1 #81A1C1 #2E3440 #8FBCBB
-client.focused_inactive #4C566A #4C566A #ECEFF4 #8FBCBB
+client.focused #8FBCBB #8FBCBB #2E3440 #5E81AC
+client.focused_inactive #4C566A #4C566A #ECEFF4 #4C566A
 client.unfocused #3B4252 #3B4252 #ECEFF4 #D08770
 client.urgent #BF616A #BF616A #ECEFF4 #D08770
+
+focus_wrapping no
 
 # Launch Polybar
 exec_always --no-startup-id ~/.config/polybar/launch.sh
