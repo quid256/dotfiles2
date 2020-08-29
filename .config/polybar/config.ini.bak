@@ -1,14 +1,14 @@
 [color]
 ;bg     = #00000000
-bg = #003b4252
-opaquebg = #003b4252
-fg     = #d8dee9
+bg = #55D8DEE9
+opaquebg = #55D8DEE9
+fg     = #434C5E
 ; fg     = #EEEEEE
 fg-alt = #C4C7C5
 mf     = ${color.bg}
 ac = #88D08770
-lighter = #884b5035
-
+lighter = #8881A1C1
+ 
 trans = #00000000
 white = #FFFFFF
 black = #000000
@@ -57,7 +57,7 @@ height = 28
 
 ; Offset defined as pixel value (e.g. 35) or percentage (e.g. 50%)
 ; the percentage can optionally be extended with a pixel offset like so:
-; 50%:-10, this will result in an offset in the x or y direction
+; 50%:-10, this will result in an offset in the x or y direction 
 ; of 50% minus 10 pixels
 offset-x = 0
 offset-y = 0
@@ -121,16 +121,15 @@ dim-value = 1.0
 wm-name = xmonad
 ; i3
 
-; Background color for the tray container
+; Background color for the tray container 
 ; ARGB color (e.g. #f00, #ff992a, #ddff1023)
 ; By default the tray container will use the bar
 ; background color.
 tray-background = ${color.bg}
-tray-foreground = ${color.fg}
 
 ; Tray offset defined as pixel value (e.g. 35) or percentage (e.g. 50%)
 tray-offset-x = 0
-tray-offset-y = 0
+tray-offset-y = -2
 
 ; Pad the sides of each tray icon
 tray-padding = 0
@@ -150,8 +149,8 @@ enable-ipc = true
 
 ; Fallback click handlers that will be called if
 ; there's no matching module handler found.
-click-left =
-click-middle =
+click-left = 
+click-middle = 
 click-right =
 scroll-up =
 scroll-down =
@@ -164,8 +163,8 @@ double-click-right =
 ; - default   : The default pointer as before, can also be an empty string (default)
 ; - pointer   : Typically in the form of a hand
 ; - ns-resize : Up and down arrows, can be used to indicate scrolling
-cursor-click =
-cursor-scroll =
+cursor-click = 
+cursor-scroll = 
 
 
 [bar/main]
@@ -210,8 +209,8 @@ compositing-underline = over
 compositing-border = over
 
 ; Define fallback values used by all module formats
-format-foreground =
-format-background =
+format-foreground = 
+format-background = 
 format-underline =
 format-overline =
 format-spacing =

@@ -31,7 +31,7 @@ font pango:Ubuntu 14
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec konsole
+bindsym $mod+Return exec kitty
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -134,13 +134,19 @@ bindsym $mod+Shift+9 move container to workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws10
 
 
-for_window [class="Spotify"] move to workspace $ws10
-assign [class="Zenkit"] $ws3
+
+bindsym $mod+Shift+s [con_mark="music"] scratchpad show
+for_window [class="Spotify"] mark "music", move scratchpad
+
+bindsym $mod+Shift+t [con_mark="tasks"] scratchpad show
+for_window [class="Zenkit"] mark "tasks", move scratchpad
+
 assign [class="zoom"] $ws8
 assign [class="Com.github.johnfactotum.Foliate"] $ws7
 
 # reload the configuration file
-bindsym $mod+Shift+c reload
+# bindsym $mod+Shift+c reload
+bindsym $mod+g exec --no-startup-id google-chrome
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 
@@ -148,7 +154,8 @@ bindsym $mod+Shift+r restart
 exec --no-startup-id synclient VertScrollDelta=-30
 
 # Background
-exec_always feh --bg-scale /home/chris/.wallpaper/bg-3.png
+# exec_always feh --bg-scale /home/chris/Development/svg-fractals/small.png
+exec_always nitrogen --restore
 
 bindsym $mod+Shift+e exec ~/.config/i3/shutdown.py
 
@@ -187,12 +194,25 @@ bindsym $mod+n exec --no-startup-id plasmawindowed org.kde.plasma.networkmanagem
 for_window [title="Plasmoidviewer"] floating enable, border none
 for_window [title="plasmawindowed"] floating enable, border none
 for_window [title="Networks"] floating enable, border none
+for_window [class="Wicd-client.py"] floating enable
 
 # Nord colors
-client.focused #8FBCBB #8FBCBB #2E3440 #5E81AC
-client.focused_inactive #4C566A #4C566A #ECEFF4 #4C566A
-client.unfocused #3B4252 #3B4252 #ECEFF4 #D08770
-client.urgent #BF616A #BF616A #ECEFF4 #D08770
+
+set $c_accent "#81A1C1"
+set $c_dir "#5E81AC"
+
+set $c_darkest "#2E3440"
+set $c_dark "#3B4252"
+set $c_light "#4C566A"
+set $c_lightest "#ECEFF4"
+
+set $col_warn "#BF616A"
+
+#CLASS                  border    backgr.   text        indicator
+client.focused          $c_accent $c_accent $c_darkest  $c_dir
+client.focused_inactive $c_light  $c_light  $c_lightest $c_light
+client.unfocused        $c_dark   $c_dark   $c_lightest $c_light
+client.urgent           $c_warn   $c_warn   $c_lightest $c_light
 
 focus_wrapping no
 
@@ -219,13 +239,19 @@ bindsym XF86AudioPause exec playerctl pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
+
 # i3-gaps + compton
-gaps inner 15
-gaps outer 25
-gaps top 0
+# gaps inner 40
+# gaps outer 40
+# gaps top 20
+# for_window [class="^.*"] border pixel 5
+gaps inner 20
+gaps outer 20
+gaps top 5
 for_window [class="^.*"] border pixel 3
 # exec --no-startup-id compton -b \
 #     --shadow --shadow-radius=15 --no-dock-shadow --clear-shadow \
 #     --fading --fade-in-step=0.05 --fade-out-step=0.05
+
 #
 exec_always --no-startup-id ~/.config/picom/launch.sh

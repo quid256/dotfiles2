@@ -33,7 +33,8 @@ Plug 'christoomey/vim-tmux-navigator'
 " Plug 'morhetz/gruvbox'
 "
 "
-
+" Plug 'dylanaraps/wal.vim'
+Plug 'deviantfero/wpgtk.vim'
 
 " Plug 'kristijanhusak/vim-hybrid-material'
 Plug 'arcticicestudio/nord-vim'
@@ -90,12 +91,16 @@ set background=dark
 
 if (has("nvim"))
     let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-    hi MatchParen gui=bold guifg=#88C0D0 guibg=none
+    " hi MatchParen gui=bold guifg=#88C0D0 guibg=none
 endif
 
 if (has("termguicolors"))
     set termguicolors
 endif
+
+" colorscheme wpgtk
+" set notermguicolors
+" hi LineNr ctermbg=0
 
 
 " hi Normal ctermbg=None
@@ -134,4 +139,4 @@ command! W :w
 command! Q :q
 command! WQ :wq
 
-source /home/chris/.vim/cocSetup.vim
+source $HOME/.vim/cocSetup.vim

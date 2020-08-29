@@ -1,3 +1,4 @@
+
 [module/alsa]
 type = internal/alsa
 
@@ -6,13 +7,13 @@ format-volume-background = ${color.mf}
 format-volume-foreground = ${color.fg}
 ;format-volume-padding = 1
 
-label-volume = " %percentage:3%%"
+label-volume = "%percentage:3%%"
 
 format-muted-background = ${color.mf}
 # format-muted-foreground = ${color.red}
 ; format-muted-padding = 1
 
-label-muted = " MUTE"
+label-muted = "MUTE"
 
 [module/alsa_i]
 type = internal/alsa
@@ -25,22 +26,17 @@ format-volume-foreground = ${color.fg}
 ;format-muted-background = ${color.blue}
 format-muted-foreground = ${color.red}
 ;format-muted-padding = 0
-;
 
-format-volume-font = 2
-format-muted-font = 2
-
-label-muted = "婢"
+label-muted = ""
 label-muted-foreground = ${color.fg}
 
-ramp-volume-0 = ""
-ramp-volume-1 = ""
-ramp-volume-2 = ""
-ramp-volume-3 = "墳"
-ramp-volume-4 = "墳"
-
-ramp-headphones-0 = " "
-ramp-headphones-1 = " "
+ramp-volume-0 = 
+ramp-volume-1 = 
+ramp-volume-2 = 
+ramp-volume-3 = 
+ramp-volume-4 = 
+ramp-headphones-0 = 
+ramp-headphones-1 = 
 
 [module/battery]
 type = internal/battery
@@ -54,21 +50,22 @@ poll-interval = 2
 time-format = %H:%M
 
 format-charging = <label-charging>
-format-charging-background = ${color.bg}
+format-charging-background = ${color.mf}
 format-charging-foreground = ${color.fg}
 ;format-charging-padding = 1
 
 format-discharging = <label-discharging>
-format-discharging-background = ${color.bg}
+format-discharging-background = ${color.mf}
 format-discharging-foreground = ${color.fg}
 ;format-discharging-padding = 1
 
-label-charging = " %percentage:3%%"
-label-discharging = " %percentage:3%%"
+label-charging = "%percentage:3%%"
+label-discharging = "%percentage:3%%"
 
-label-full = " 100%"
+label-full = "FULL"
 label-full-foreground = ${color.fg}
-label-full-background = ${color.bg}
+label-full-background = ${color.mf}
+;label-full-padding = 1
 
 [module/battery_i]
 type = internal/battery
@@ -81,44 +78,43 @@ poll-interval = 2
 time-format = %H:%M
 
 format-charging = <animation-charging>
-format-charging-font = 5
+;format-charging-background = ${color.green}
+format-charging-foreground = ${color.green}
 ;format-charging-padding = 1
 
 format-discharging = <ramp-capacity>
-format-discharging-font = 5
+;format-discharging-background = ${color.pink}
+format-discharging-foreground = ${color.pink}
 ;format-discharging-padding = 1
-
-format-full-font = 5
 
 label-charging = %percentage%%
 label-discharging = %percentage%%
 
-label-full = 
-
-label-full-background = ${color.bg}
-label-full-foreground = ${color.fg}
+label-full = 
+;label-full-background = ${color.green}
+label-full-foreground = ${color.green}
 ;label-full-padding = 1
 
-ramp-capacity-0 = 
-ramp-capacity-1 = 
-ramp-capacity-2 = 
-ramp-capacity-3 = 
-ramp-capacity-4 = 
-ramp-capacity-5 = 
-ramp-capacity-6 = 
-ramp-capacity-7 = 
-ramp-capacity-8 = 
-ramp-capacity-9 = 
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+ramp-capacity-5 = 
+ramp-capacity-6 = 
+ramp-capacity-7 = 
+ramp-capacity-8 = 
+ramp-capacity-9 = 
 
-animation-charging-0 = 
-animation-charging-1 = 
-animation-charging-2 = 
-animation-charging-3 = 
-animation-charging-4 = 
-animation-charging-5 = 
-animation-charging-6 = 
-animation-charging-7 = 
-animation-charging-8 = 
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
+animation-charging-4 = 
+animation-charging-5 = 
+animation-charging-6 = 
+animation-charging-7 = 
+animation-charging-8 = 
 
 animation-charging-framerate = 750
 
@@ -140,7 +136,7 @@ type = internal/cpu
 interval = 0.5
 
 format = 
-format-background = ${color.bg}
+;format-background = ${color.teal}
 format-foreground = ${color.fg}
 ;format-padding = 1
 
@@ -150,36 +146,22 @@ type = internal/date
 interval = 1.0
 
 time = %I:%M %p
-date = %Y-%m-%d
+date-alt = %Y-%m-%d
 
 format = <label>
-format-background = ${color.bg}
+;format-background = ${color.mf} 
 format-foreground = ${color.fg}
+;format-padding = 1
  
-label = " %date% | %time%"
+label = " %time%%date%"
 
 [module/date_i]
 type = custom/text
 
-content = 
-content-font = 2
+content = 
+; content-background = ${color.amber} 
+;content-foreground = ${color.fg}
 ;content-padding = 1
-
-[module/xmonad]
-type = custom/script
-exec = $HOME/go/bin/xmonad-log
-
-format-foreground = ${color.fg}
-format-background = ${color.opaquebg}
-
-tail = true
-
-[module/xmonad_i]
-type = custom/text
-
-content = "  "
-content-font = 2
-
 
 [module/i3]
 type = internal/i3
@@ -194,35 +176,28 @@ enable-scroll = true
 wrapping-scroll = false
 reverse-scroll = false
 
-
 format = <label-state> <label-mode>
-label-focused = %name% %index%
-label-focused-font = 3
-label-focused-foreground = ${color.fg}
+label-focused = %name%  %index%
+label-focused-foreground = ${color.bg}
 label-focused-background = ${color.lighter}
 label-focused-padding = 1
 
-label-unfocused = %name% %index%
-label-unfocused-font = 3
+label-unfocused = %name%  %index%
 label-unfocused-foreground = ${color.fg}
-label-unfocused-background = ${color.opaquebg}
+label-unfocused-background = ${color.bg}
 label-unfocused-underline = ${color.mf}
 label-unfocused-padding = 1
 
-label-visible = %name% %index%
-label-visible-font = 3
-label-visible-foreground = ${color.fg}
-label-visible-background = ${color.opaquebg}
+label-visible = %name%  %index%
+label-visible-underline = ${color.ac}
+label-visible-background = ${color.bg}
 label-visible-padding = 1
 
 label-mode = %mode%
-label-mode-font = 3
 label-mode-padding = 2
-label-mode-foreground = ${color.fg}
 label-mode-background = ${color.ac}
 
-label-urgent = %name% %index%
-label-urgent-font = 3
+label-urgent = %name%  %index%
 label-urgent-foreground = ${color.fg}
 label-urgent-background = ${color.red}
 label-urgent-padding = 1
@@ -237,9 +212,13 @@ accumulate-stats = true
 unknown-as-up = true
 
 format-connected = <label-connected>
+format-connected-background = ${color.mf}
+format-connected-foreground = ${color.fg}
 ;format-connected-padding = 1
  
 format-disconnected = <label-disconnected>
+format-disconnected-background = ${color.mf}
+format-disconnected-foreground = ${color.fg}
 ;format-disconnected-padding = 1
 
 label-connected = " %{A1:~/.config/polybar/scripts/toggle-nm.sh:}%signal%% %{T3}(%local_ip%)%{T-}%{A}"
@@ -254,20 +233,22 @@ accumulate-stats = true
 unknown-as-up = true
 
 format-connected = <ramp-signal>
+;format-connected-background = ${color.purple}
+format-connected-foreground = ${color.fg}
 ;format-connected-padding = 1
-format-connected-font = 2
  
 format-disconnected = <label-disconnected>
-format-disconnected-font = 2
+;format-disconnected-background = ${color.purple}
+format-disconnected-foreground = ${color.fg}
 ;format-disconnected-padding = 1
 
-label-disconnected = 睊
+label-disconnected = 
 
-ramp-signal-0 = 直
-ramp-signal-1 = 直
-ramp-signal-2 = 直
-ramp-signal-3 = 直
-ramp-signal-4 = 直
+ramp-signal-0 = 
+ramp-signal-1 = 
+ramp-signal-2 = 
+ramp-signal-3 = 
+ramp-signal-4 = 
 
 [module/title]
 type = internal/xwindow
@@ -283,7 +264,7 @@ label-maxlen = 50
 [module/separator]
 type = custom/text
 
-content ="  "
+content = |
 content-background = ${color.bg}
 content-foreground = ${color.fg}
 content-padding = 1

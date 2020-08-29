@@ -3,7 +3,8 @@
   border-color: #3B4252;
   text-color: #81A1C1;
   spacing: 0;
-  width: 780px;
+  width: 400px;
+  height: 425px;
 }
 
 window {

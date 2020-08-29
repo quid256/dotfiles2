@@ -2,20 +2,28 @@
 TextHinting=Enabled
 
 [General]
+ShellOpenFileInTabs=true
 ttsEngine=flite
+
+[Identity]
+IdentityAuthor=Chris Winkler
 
 [Main View]
 ShowBottomBar=false
 ShowLeftPanel=false
-SplitterSizes=341,1458
+SplitterSizes=345,683
 
 [Nav Panel]
 SidebarIconSize=22
 SidebarShowText=false
 
 [PageView]
+BackgroundColor=0,0,0
+EditToolBarPlacement=3
 ShowScrollBars=false
-ViewColumns=1
+TrimMargins=true
+UseCustomBackgroundColor=true
+ViewColumns=7
 
 [Reviews]
-AnnotationTools=<tool type="highlight" id="1"><engine type="TextSelector" color="#ffff557f"><annotation opacity="0.75" type="Highlight" color="#ffff557f"/></engine><shortcut>1</shortcut></tool>,<tool type="highlight" id="2"><engine type="TextSelector" color="#ffffff7f"><annotation opacity="0.75" type="Highlight" color="#ffffff7f"/></engine><shortcut>2</shortcut></tool>,<tool type="highlight" id="3"><engine type="TextSelector" color="#ff9bcdff"><annotation opacity="0.75" type="Highlight" color="#ff9bcdff"/></engine><shortcut>3</shortcut></tool>,<tool type="highlight" id="4"><engine type="TextSelector" color="#ff00ff7f"><annotation opacity="0.75" type="Highlight" color="#ff00ff7f"/></engine><shortcut>4</shortcut></tool>,<tool type="note-linked" id="5"><engine hoverIcon="tool-note" type="PickPoint" color="#ffffff7f"><annotation icon="Note" type="Text" color="#ffffff7f"/></engine><shortcut>5</shortcut></tool>,<tool type="underline" id="6"><engine type="TextSelector" color="#ff000000"><annotation type="Underline" color="#ff000000"/></engine><shortcut>6</shortcut></tool>,<tool type="ellipse" id="7"><engine block="true" type="PickPoint" color="#ff00ffff"><annotation width="5" type="GeomCircle" color="#ff00ffff"/></engine><shortcut>7</shortcut></tool>,<tool type="polygon" id="8"><engine points="-1" type="PolyLine" color="#ff007eee"><annotation width="1" type="Line" color="#ff007eee"/></engine><shortcut>8</shortcut></tool>,<tool type="typewriter" id="9"><engine block="true" type="PickPoint"><annotation width="0" textColor="#ff000000" type="Typewriter" color="#00ffffff"/></engine><shortcut>9</shortcut></tool>
+AnnotationTools=<tool id="1" type="highlight"><engine color="#ffebcb8b" type="TextSelector"><annotation opacity="0.75" color="#ffebcb8b" type="Highlight"/></engine><shortcut>1</shortcut></tool>,<tool id="2" type="highlight"><engine color="#ffa3be8c" type="TextSelector"><annotation opacity="0.75" color="#ffa3be8c" type="Highlight"/></engine><shortcut>2</shortcut></tool>,<tool id="3" type="highlight"><engine color="#ff88c0d0" type="TextSelector"><annotation opacity="0.75" color="#ff88c0d0" type="Highlight"/></engine><shortcut>3</shortcut></tool>,<tool id="4" type="highlight"><engine color="#ffbf616a" type="TextSelector"><annotation opacity="0.75" color="#ffbf616a" type="Highlight"/></engine><shortcut>4</shortcut></tool>,<tool id="5" type="note-linked"><engine color="#ffffff7f" hoverIcon="tool-note" type="PickPoint"><annotation icon="Note" color="#ffffff7f" type="Text"/></engine><shortcut>5</shortcut></tool>,<tool id="6" type="underline"><engine color="#ff000000" type="TextSelector"><annotation color="#ff000000" type="Underline"/></engine><shortcut>6</shortcut></tool>,<tool id="7" type="ellipse"><engine block="true" color="#ff00ffff" type="PickPoint"><annotation width="5" color="#ff00ffff" type="GeomCircle"/></engine><shortcut>7</shortcut></tool>,<tool id="8" type="polygon"><engine points="-1" color="#ff007eee" type="PolyLine"><annotation width="1" color="#ff007eee" type="Line"/></engine><shortcut>8</shortcut></tool>,<tool id="9" type="typewriter"><engine block="true" type="PickPoint"><annotation width="0" color="#00ffffff" textColor="#ff000000" type="Typewriter"/></engine><shortcut>9</shortcut></tool>

@@ -23,6 +23,9 @@ class Commander:
         """ copy local files to school gdrive """
         r("konsole -e /home/chris/.config/rclone/backup-school.sh")
 
+    def update_lockscreen(self):
+        r("alacritty -e betterlockscreen -u $(awk '/file=/ {split($1, a, /=/); print a[2]}' ~/.config/nitrogen/bg-saved.cfg)")
+
 if __name__ == '__main__':
     commands = [cmd for cmd in dir(Commander) if not cmd.startswith('_')]
     res = r("echo \"{}\" | rofi -sep '|' -dmenu -p \"cmd\"".format("|".join(commands)))
