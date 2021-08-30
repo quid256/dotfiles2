@@ -3,17 +3,18 @@
  */
 
 * {
-    background-color: #2E3440;
-    border-color:     #ECEFF4;
-    text-color:       #ECEFF4;
-    font:             "Ubuntu Mono 14";
+    background-color: #2b383b;
+    border-color:     #ecf4f3;
+    text-color:       #ecf4f3;
+    font:             "JetBrainsMono Nerd Font 10";
 }
 
 #window {
     anchor:   north;
     location: north;
     width:    100%;
-    padding:  3px;
+    height: 24px;
+    padding:  1px;
     children: [ horibox ];
 }
 
@@ -24,13 +25,14 @@
 
 #listview {
     layout:  horizontal;
-    spacing: 10px;
+    spacing: 5px;
     lines:   100;
 }
 
 #entry {
     expand: false;
-    width:  7em;
+    padding: 2px;
+    width:  10em;
 }
 
 #element {
@@ -38,6 +40,6 @@
 }
 
 #element selected {
-    text-color: #2E3440;
-    background-color: #8FBCBB;
+    text-color: #2b383b;
+    background-color: #96ba8c;
 }

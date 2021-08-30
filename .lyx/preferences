@@ -1,4 +1,4 @@
-# LyX 2.3.3 generated this file. If you want to make your own
+# LyX 2.3.6.1 generated this file. If you want to make your own
 # modifications you should do them from inside LyX and save.
 
 Format 24
@@ -16,9 +16,10 @@ Format 24
 # SCREEN & FONTS SECTION ############################
 #
 
+\screen_zoom 160
 \screen_font_roman "Latin Modern Roman"
 \screen_font_sans "Latin Modern Sans"
-\screen_font_typewriter "Iosevka Custom"
+\screen_font_typewriter "Latin Modern Mono"
 \screen_font_sizes 5 7 8 9 10 12 14.4 17.26 20.74 24.88
 \single_instance false
 \forward_search_pdf "okular --unique \"$$o#src:$$n $$f\""
@@ -105,7 +106,6 @@ Format 24
 \format "noteedit" "not" "Noteedit" "" "auto" "auto" "vector" ""
 \format "oocalc" "ods" "OpenDocument spreadsheet" "" "" "auto" "document" "application/vnd.oasis.opendocument.spreadsheet"
 \format "pdf5" "pdf" "PDF (LuaTeX)" "u" "okular" "" "document,vector,menu=export" ""
-\format "pdf2" "pdf" "PDF (pdflatex)" "F" "okular" "" "document,vector,menu=export" ""
 \format "tgif" "obj, tgo" "Tgif" "" "auto" "auto" "vector" "application/x-tgif"
 \default_otf_view_format dvi3
 

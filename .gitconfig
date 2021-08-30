@@ -3,3 +3,8 @@
 
 [alias]
     l = log --branches --remotes --tags --graph --decorate --notes HEAD
+[user]
+	email = quidnovum@gmail.com
+	name = Chris Winkler
+[init]
+	defaultBranch = main

@@ -1,0 +1,236 @@
+[pacman]
+
+# Shell
+zsh
+(aur) starship-bin
+# zsh-syntax-highlighting
+# zsh-autosuggestions
+# (aur) prezto-contrib-git
+# (aur) prezto-git
+
+# Package Management
+reflector
+asp
+(aur) paru-bin # AUR helper
+
+# Apps
+discord
+(aur) typora
+# gimp
+inkscape
+lxappearance
+lxqt-archiver
+lyx
+# meld # A visual diff tool 
+musescore
+nitrogen
+# okular
+evince
+pcmanfm-gtk3
+qbittorrent
+steam
+borg
+virtualbox
+virtualbox-host-modules-arch
+lximage-qt
+(aur) iwgtk
+(aur) freeoffice
+
+(aur) google-chrome
+(aur) brave-bin
+firefox
+
+(aur) spotify
+(aur) zenkit
+(aur) zoom
+(aur) hourglass-git
+
+# Utilities
+# alacritty
+kitty
+blueman bluez-tools bluez-utils # Bluetooth
+lxsession
+# flameshot # Screenshots
+(aur) flameshot-git
+gedit
+# htop
+(aur) bottom-bin # htop replacement in rust
+vim
+# neovim
+(aur) neovim-nightly-bin
+rsync
+rclone
+zip unzip # for working with zip files
+lostfiles # finds files that are not associated with an ABS package
+exa # better ls
+ripgrep # better grep
+bat # better cat
+fd # better find
+fzf # Fuzzy find
+mpv #?
+ranger # CLI file manager
+nethogs # Find out who's on what ports
+(aur) chromedriver
+(aur) grabc # Grab colors with X
+(aur) stockfish # Chess engine
+(aur) skypeforlinux-stable-bin
+
+# Internet
+speedtest-cli
+ethtool
+iperf3
+
+# Development
+## tools
+# cloc
+git
+github-cli
+tig # CLI git client
+(aur) tokei-bin # Fast cloc replacement
+
+## language-specific
+# nodejs
+npm
+gcc-fortran
+jdk11-openjdk
+luarocks
+r
+protobuf
+python-iwlib
+python-pip
+(aur) python-mathlibtools
+python2
+go
+graphviz # for pprof go
+clang
+rustup # Rust toolchain
+julia # julia-lang
+zig (aur) zls-bin # Zig
+
+## IDEs
+# code
+(aur) visual-studio-code-bin
+# (aur) intellij-idea-ultimate-edition
+(aur) rstudio-desktop-bin
+
+# Window managers
+awesome
+dunst
+qtile
+rofi
+(aur) flashfocus-git
+# (aur) sp # necessary for awesomewm spotify controller
+
+# Aesthetics + Fonts
+# breeze-icons # For okular
+papirus-icon-theme
+# (aur) betterlockscreen
+(aur) picom-ibhagwan-git
+(aur) qt5-styleplugins
+(aur) spicetify-cli
+(aur) spicetify-themes-git
+
+(aur) themix-icons-numix-git
+(aur) themix-icons-papirus-git
+(aur) themix-theme-arc-git
+(aur) themix-theme-oomox-git
+(aur) themix-theme-materia-git
+(aur) themix-gui-git
+(aur) themix-plugin-base16-git
+(aur) gtk-theme-flat-color-git
+
+# Fonts
+noto-fonts-emoji    # Used for emoji
+ttf-bitstream-vera  # Used in .config/fontconfig/fonts.conf for default serif/sans-serif fonts
+ttf-croscore
+adobe-source-han-sans-otc-fonts # East asian characters
+(aur) ttf-ms-fonts
+
+# (aur) ttf-meslo-nerd-font-powerlevel10k
+# (aur) nerd-fonts-fira-code
+(aur) nerd-fonts-jetbrains-mono # Coding/monospace font rn
+
+ttf-opensans
+otf-latin-modern
+
+# Peripherals
+# Sound
+alsa-tools
+alsa-utils
+pulseaudio
+pulseaudio-alsa
+pulseaudio-bluetooth
+pavucontrol
+volumeicon
+
+# Display
+arandr
+# autorandr # I use a udev hook now, I guess
+
+# Power Management
+acpi
+acpid
+acpilight
+upower
+powertop
+tlp
+xfce4-power-manager
+xfce4-session
+(aur) tlpui
+
+# Printing
+(aur) brother-cups-wrapper-laser
+cups
+cups-pdf
+system-config-printer
+
+# GPU
+# nvidia
+# nvidia-utils
+# (aur) optimus-manager
+
+# FS
+dosfstools  # mkfs.fat et al *
+fuse2       # fake filesystems (from rclone or similar) *
+gvfs        # Virtual fs implementation (don't know for what)*
+udisks2     # disk management service *
+(aur) arch-luks-suspend-git
+# trash-cli # * Interesting but not sure if its useful *
+
+# LaTeX
+(aur) pandoc-bin
+# (aur) tllocalmgr-git
+
+texlab
+(aur) tectonic-bin
+(abs-manual) texlive-local-adjustbox
+(abs-manual) texlive-local-bbold
+(abs-manual) texlive-local-collectbox
+(abs-manual) texlive-local-doublestroke
+(abs-manual) texlive-local-enumitem
+(abs-manual) texlive-local-environ
+(abs-manual) texlive-local-framed
+(abs-manual) texlive-local-moresize
+(abs-manual) texlive-local-preprint
+(abs-manual) texlive-local-stmaryrd
+(abs-manual) texlive-local-tcolorbox
+(abs-manual) texlive-local-titling
+(abs-manual) texlive-local-trimspaces
+(abs-manual) texlive-local-ucs
+(abs-manual) texlive-local-units
+(abs-manual) texlive-local-upquote
+(abs-manual) texlive-local-todonotes
+(abs-manual) texlive-local-bussproofs
+(abs-manual) texlive-local-accsupp
+
+# Other
+man-db
+man-pages
+ntfs-3g # Tools for reading ntfs disks
+mtools # tools to access MS-DOS disks
+openssh
+
+libgit2 #?
+optipng #?
+(aur) srain #?
+

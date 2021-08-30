@@ -1,0 +1,69 @@
+namespaces:
+  arch-official:
+    list-cmd: comm -23 <(pacman -Qe | sort) <(pacman -Qm | sort) | sed -E 's/([^ ]+) .*/\1/g'
+    remove-cmd: |
+        # Find a list of all packages that no other package depends on
+        UNDEPS=$(pacman -Qt | sed -E 's/([^ ]+) .*/\1/g' | sort)
+
+        # If a packages has no dependers, then removal is explicit. Otherwise,
+        # the packages is just marked --asdeps
+        TOMARK=$(comm -12 <(echo $UNDEPS) <(echo $PKGS | tr " " "\n" | sort))
+        TOREMOVE=$(comm -13 <(echo $UNDEPS) <(echo $PKGS | tr " " "\n" | sort))
+
+        [[ ! -z $(echo $TOMARK | sed 's/[ \n]//g') ]] && sudo pacman -D --asdeps $TOMARK
+        [[ ! -z $(echo $TOREMOVE | sed 's/[ \n]//g') ]] && sudo pacman --noconfirm -Rns $TOREMOVE
+
+    default-manager: pacman
+
+  arch-unofficial:
+    list-cmd: pacman -Qme | sed -E 's/([^ ]+) .*/\1/g'
+    remove-cmd: |
+        # Find a list of all packages that no other package depends on
+        UNDEPS=$(pacman -Qt | sed -E 's/([^ ]+) .*/\1/g' | sort)
+
+        # If a packages has no dependers, then removal is explicit. Otherwise,
+        # the packages is just marked --asdeps
+        TOMARK=$(comm -12 <(echo $UNDEPS) <(echo $PKGS | tr " " "\n" | sort))
+        TOREMOVE=$(comm -13 <(echo $UNDEPS) <(echo $PKGS | tr " " "\n" | sort))
+
+        [[ ! -z $(echo $TOMARK | sed 's/[ \n]//g') ]] && sudo pacman -D --asdeps $TOMARK
+        [[ ! -z $(echo $TOREMOVE | sed 's/[ \n]//g') ]] && sudo pacman --noconfirm -Rns $TOREMOVE
+
+    default-manager: aur
+
+managers:
+  pacman:
+    namespace: arch-official
+    install-cmd: |
+        # Find a list of all packages that are already installed --asdeps
+        DEPS=$(pacman -Qd | sed -E 's/([^ ]+) .*/\1/g' | sort)
+
+        # If a package is already installed --asdeps, it need only be marked
+        # --asexplicit. Otherwise, explicit install is necessary
+        TOMARK=$(comm -12 <(echo $DEPS) <(echo $PKGS | tr " " "\n" | sort))
+        TOINSTALL=$(comm -13 <(echo $DEPS) <(echo $PKGS | tr " " "\n" | sort))
+
+        [[ ! -z $(echo $TOMARK | sed 's/[ \n]//g') ]] && sudo pacman -D --asexplicit $TOMARK
+        [[ ! -z $(echo $TOINSTALL | sed 's/[ \n]//g') ]] && sudo pacman --noconfirm -S $TOINSTALL
+  
+  pacman-group:
+    namespace: arch-official
+    install-cmd: sudo pacman --noconfirm -S $PKGS
+    expand-cmd: pacman -Sg $TARGETS | sed -E 's/[^ ]+ ([^ ]+)/\1/g'
+
+  aur:
+    namespace: arch-unofficial
+    install-cmd: |
+        # Find a list of all packages that are already installed --asdeps
+        DEPS=$(pacman -Qd | sed -E 's/([^ ]+) .*/\1/g' | sort)
+
+        # If a package is already installed --asdeps, it need only be marked
+        # --asexplicit. Otherwise, explicit install is necessary
+        TOMARK=$(comm -12 <(echo $DEPS) <(echo $PKGS | tr " " "\n" | sort))
+        TOINSTALL=$(comm -13 <(echo $DEPS) <(echo $PKGS | tr " " "\n" | sort))
+
+        [[ ! -z $(echo $TOMARK | sed 's/[ \n]//g') ]] && sudo pacman -D --asexplicit $TOMARK
+        [[ ! -z $(echo $TOINSTALL | sed 's/[ \n]//g') ]] && paru --noconfirm -S $TOINSTALL
+  
+  abs-manual:
+    namespace: arch-unofficial

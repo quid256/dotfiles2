@@ -1,8 +1,15 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+# if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+#   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+# fi
+
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:$HOME/.local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/chris/.oh-my-zsh"
+# export ZSH="/home/chris/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -50,13 +57,10 @@ export ZSH="/home/chris/.oh-my-zsh"
 # Uncomment the following line if you want to disable marking untracked files
 # under VCS as dirty. This makes repository status check for large repositories
 # much, much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
+DISABLE_UNTRACKED_FILES_DIRTY="true"
 plugins=(
 	colored-man-pages
 	zsh-syntax-highlighting
-	git
-	python
-	nvm
 )
 # Uncomment the following line if you want to change the command execution time
 # stamp shown in the history command output.
@@ -75,11 +79,7 @@ plugins=(
 export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
-if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='nvim'
-else
-  export EDITOR='vim'
-fi
+export EDITOR=nvim
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -95,78 +95,74 @@ fi
 #
 
 #### STUFF I DID
-
-# Add LaTeX stuff to the path for the texlive I installed
-MANPATH=/usr/local/texlive/2019/texmf-dist/doc/man:$MANPATH
-INFOPATH=/usr/local/texlive/2019/texmf-dist/doc/info:$INFOPATH
-PATH=/usr/local/texlive/2019/bin/x86_64-linux:$PATH
-
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/chris/Development/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/home/chris/Development/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/chris/Development/anaconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/home/chris/Development/anaconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
-
-
-# Setup for NVM
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-# Don't know if this is necessary or not? Not sure.
-# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-
-# Add IntelliJ IDEA to the PATH
-PATH=/usr/share/idea/idea-IU-192.6817.14/bin:$PATH
-
-# Apparently I need to add /snap/bin/ to the path?
-PATH=/snap/bin:$PATH
-
-# Alias to make this easier for me
-#alias vim=nvim
-
-alias update="sudo apt update && sudo apt upgrade"
-
-
 #### ZSH STUFF
+# POWERLEVEL9K_MODE="nerdfont-complete"
 
-# Set zsh theme
-ZSH_THEME=powerlevel10k/powerlevel10k
+# export PATH="/home/chris/.pyenv/bin:$PATH"
+# eval "$(pyenv init -)"
+# eval "$(pyenv virtualenv-init -)"
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-# Source oh-my-zsh
-source $ZSH/oh-my-zsh.sh
-
-
-export PATH="/home/chris/.pyenv/bin:$PATH"
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
-
-export XDG_CURRENT_DESKTOP="KDE"
-
-export PATH="$HOME/.cargo/bin:$PATH"
+# export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="/usr/local/go/bin/:$PATH"
 export PATH="/home/chris/go/bin/:$PATH"
 
-function gh() {
-    git clone http://github.com/$1
-}
+# function gh() {
+#     git clone http://github.com/$1
+# }
 
 alias dotfiles='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
-# pywal
-# (cat ~/.cache/wal/sequences &)
-# source ~/.cache/wal/colors-tty.sh
+# Set up NodeJS to use ~/.node_modules for globally installed modules
+PATH="$HOME/.node_modules/bin:$PATH"
+export npm_config_prefix=~/.node_modules
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+# [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+# [ -f /opt/miniconda3/etc/profile.d/conda.sh ] && source /opt/miniconda3/etc/profile.d/conda.sh
+#
 #
 
-# WPG
+# History searching
+# autoload -U up-line-or-beginning-search
+# autoload -U down-line-or-beginning-search
+# zle -N up-line-or-beginning-search
+# zle -N down-line-or-beginning-search
+# bindkey "$terminfo[kcuu1]" up-line-or-beginning-search # Up
+# bindkey "$terminfo[kcud1]" down-line-or-beginning-search # Down
+
+# source "/usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+# source "/usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh"
+
+if [[ ! -f ~/.zpm/zpm.zsh ]]; then
+      git clone --recursive https://github.com/zpm-zsh/zpm ~/.zpm
+fi
+source ~/.zpm/zpm.zsh
+
+zpm load                      \
+    zpm-zsh/core-config       \
+    zpm-zsh/check-deps,async  \
+    zpm-zsh/ls                \
+    zpm-zsh/colorize          \
+    zpm-zsh/dot               \
+    zpm-zsh/undollar,async
+
+zpm load \
+    zpm-zsh/clipboard \
+    voronkovich/gitignore.plugin.zsh       \
+    zdharma/fast-syntax-highlighting       \
+    zsh-users/zsh-history-substring-search,source:zsh-history-substring-search.zsh \
+    zsh-users/zsh-autosuggestions,source:zsh-autosuggestions.zsh
+
+
+bindkey "^[[A" history-substring-search-up
+bindkey "^[[B" history-substring-search-down
+
+eval "$(starship init zsh)"
+
+alias ssh="kitty +kitten ssh"
+
+PATH="/home/chris/perl5/bin${PATH:+:${PATH}}"; export PATH;
+PERL5LIB="/home/chris/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
+PERL_LOCAL_LIB_ROOT="/home/chris/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
+PERL_MB_OPT="--install_base \"/home/chris/perl5\""; export PERL_MB_OPT;
+PERL_MM_OPT="INSTALL_BASE=/home/chris/perl5"; export PERL_MM_OPT;

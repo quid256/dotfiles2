@@ -30,13 +30,7 @@ Plug 'junegunn/goyo.vim'
 Plug 'ctrlpvim/ctrlp.vim'
 
 Plug 'christoomey/vim-tmux-navigator'
-" Plug 'morhetz/gruvbox'
-"
-"
-" Plug 'dylanaraps/wal.vim'
-Plug 'deviantfero/wpgtk.vim'
 
-" Plug 'kristijanhusak/vim-hybrid-material'
 Plug 'arcticicestudio/nord-vim'
 
 Plug 'ryanoasis/vim-devicons'
@@ -45,6 +39,7 @@ Plug 'xolox/vim-notes'
 Plug 'xolox/vim-misc'
 
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'psf/black', { 'branch': 'stable' }
 
 call plug#end()
 
@@ -52,6 +47,7 @@ let python_highlight_all=1
 
 highlight BadWhitespace ctermbg=red guibg=#BF616A
 au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
+autocmd BufWritePre *.py execute ':Black'
 
 set encoding=utf-8
 " set relativenumber
@@ -62,6 +58,7 @@ set shiftwidth=4
 set expandtab
 set tabstop=4
 set softtabstop=4
+set modeline
 
 set nocursorline
 set smartindent
