@@ -13,6 +13,8 @@ Plug 'vim-scripts/indentpython.vim'
 Plug 'nvie/vim-flake8'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
+" Plug '', {'branch': 'release'}
+
 Plug 'scrooloose/nerdtree'
 Plug 'flazz/vim-colorschemes' " Vim colorschemes
 
@@ -41,6 +43,8 @@ Plug 'xolox/vim-misc'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'psf/black', { 'branch': 'stable' }
 
+Plug '~/.vim/bundle/earthy-vim'
+
 call plug#end()
 
 let python_highlight_all=1
@@ -67,7 +71,7 @@ set fileformat=unix
 
 let g:enable_bold_font = 1
 let g:enable_italic_font = 1
-let g:nord_uniform_status_lines = 0
+let g:earthy_uniform_status_lines = 0
 
 let g:airline_powerline_fonts = 1
 let g:airline_skip_empty_sections = 1
@@ -82,7 +86,7 @@ let g:gitgutter_sign_removed_first_line = '▔'
 let g:gitgutter_sign_modified_removed = '▎▔'
 
 let g:go_version_warning = 0
-colorscheme nord
+colorscheme earthy
 set background=dark
 
 

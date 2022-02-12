@@ -1,23 +1,21 @@
 local vim = vim
 
 package.loaded["util"] = nil
-
 Util = require("util")
 
--- print(vim.inspect(Util))
 Util.plug_install {
-    -- 'vim-airline/vim-airline',
+    "itchyny/vim-gitbranch",
     "itchyny/lightline.vim",
-    "~/.vim/bundle/earthy-vim", -- my color scheme
+    -- "~/.vim/bundle/earthy-vim", -- my color scheme
+    {"folke/tokyonight.nvim", branch = "main"},
     -- 'lifepillar/vim-gruvbox8',
     -- 'arcticicestudio/nord-vim',
-    'lifepillar/vim-colortemplate',
-    'folke/lsp-colors.nvim',
-    'folke/lsp-trouble.nvim',
-
+    -- 'lifepillar/vim-colortemplate',
+     -- 'folke/lsp-colors.nvim',
+    -- 'folke/lsp-trouble.nvim',
     -- 'tpope/vim-fugitive',
+    -- 'KabbAmine/vCoolor.vim',
 
-    'KabbAmine/vCoolor.vim',
     'norcalli/nvim-colorizer.lua',
 
     -- Useful for setting up keybinds
@@ -27,35 +25,42 @@ Util.plug_install {
     "lambdalisue/nerdfont.vim",
     "lambdalisue/fern-renderer-nerdfont.vim",
     "lambdalisue/fern-hijack.vim",
-    "airblade/vim-rooter",
+    -- "airblade/vim-rooter",
 
     -- Random useful things, I should look into this (right now here as a dependency)
     "nvim-lua/popup.nvim",
     "nvim-lua/plenary.nvim",
     "kyazdani42/nvim-web-devicons",
-    -- "glepnir/dashboard-nvim",
     "nvim-telescope/telescope.nvim",
 
     -- LSP / syntax highlighting stuff
     "neovim/nvim-lspconfig", -- nvim base LSP configs
-    "kabouzeid/nvim-lspinstall", -- LSP auto-installation
-    "hrsh7th/nvim-compe", -- completions
+    "williamboman/nvim-lsp-installer",
+    -- completion engine
+    "hrsh7th/cmp-nvim-lsp",
+    "hrsh7th/cmp-buffer",
+    "hrsh7th/cmp-path",
+    "hrsh7th/nvim-cmp",
+    "hrsh7th/cmp-vsnip",
+    "hrsh7th/vim-vsnip",
     { "nvim-treesitter/nvim-treesitter", ["do"] = ":TSUpdate" },
-    "lukas-reineke/format.nvim",
+
+    "jreybert/vimagit",
 
     "lervag/vimtex",
-    "sbdchd/neoformat",
+    -- "sbdchd/neoformat",
 
     "machakann/vim-sandwich",
-    "felipesere/pie-highlight.vim",
-    "vmchale/dhall-vim",
+
+    -- languages
+    --"felipesere/pie-highlight.vim",
+    -- "vmchale/dhall-vim",
+    "nathangrigg/vim-beancount",
 
     "mhinz/vim-signify",
     "idbrii/detectindent",
 
     { "turbio/bracey.vim", ["do"] = "npm install --prefix server" },
-
-    -- {"oberblastmeister/neuron.nvim", branch = "unstable"},
 }
 
 
@@ -69,7 +74,7 @@ Util.options.global {
     modeline = true,
     pastetoggle = "<Insert>",
     termguicolors = true,
-    completeopt = "menuone,noselect",
+    completeopt = "menu,menuone,noselect",
     expandtab = true,
     shiftwidth = 4,
     tabstop = 4,
@@ -79,7 +84,6 @@ Util.options.global {
 
     showmode=false,
     signcolumn="yes",
-
 }
 
 vim.o.shortmess = vim.o.shortmess .. "c"
@@ -88,8 +92,8 @@ Util.options.window {
     wrap = false,
     number = true,
 
-    foldmethod="expr",
-    foldexpr="nvim_treesitter#foldexpr()"
+    -- foldmethod="expr",
+    -- foldexpr="nvim_treesitter#foldexpr()"
 }
 
 Util.options.buffer {
@@ -110,20 +114,109 @@ Util.vars.global {
     ["fern#renderer"] = "nerdfont",
 
     mapleader = " ",
-    rooter_patterns = {".git", ".vscode", "PROJECT_ROOT", "neuron.dhall"},
-    lightline = {colorscheme = "earthy_ct"},
+    -- rooter_patterns = {".git", ".vscode", "PROJECT_ROOT", "neuron.dhall"},
+    lightline = {
+        colorscheme = "tokyonight",
+        active = {
+            left = {
+                {'mode', 'paste'},
+                {'gitbranch', 'readonly', 'filename', 'modified'}
+            }
+        },
+        component_function = {
+            gitbranch = 'gitbranch#name',
+        },
+    },
 
     vimtex_quickfix_enabled = false,
     vimtex_compiler_method = "tectonic",
     vimtex_view_method = "mupdf",
 
-    earthy_ct_plugin_hi_groups = 1,
+    -- earthy_ct_plugin_hi_groups = 1,
 
     signify_sign_add = "▍",
     signify_sign_change = "▍",
     signify_sign_delete = "▁",
     signify_sign_delete_first_line = "▔",
+
 }
+
+local kind_icons = {
+      Text = "",
+      Method = "",
+      Function = "",
+      Constructor = "",
+      Field = "",
+      Variable = "",
+      Class = "ﴯ",
+      Interface = "",
+      Module = "",
+      Property = "ﰠ",
+      Unit = "",
+      Value = "",
+      Enum = "",
+      Keyword = "",
+      Snippet = "",
+      Color = "",
+      File = "",
+      Reference = "",
+      Folder = "",
+      EnumMember = "",
+      Constant = "",
+      Struct = "",
+      Event = "",
+      Operator = "",
+      TypeParameter = ""
+}
+
+
+-- Completion / LSP setup
+local cmp = require'cmp'
+cmp.setup({
+    snippet = {
+        expand = function(args)
+            vim.fn["vsnip#anonymous"](args.body)
+        end
+    },
+    mapping = {
+        ['<CR>'] = cmp.mapping.confirm({ select = true }),
+    },
+    sources = cmp.config.sources({
+        { name = 'nvim_lsp' },
+        { name = 'vsnip' },
+    }, {
+        { name = 'buffer' },
+    }),
+    formatting = {
+        format = function(entry, vim_item)
+            -- Kind icons
+            vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
+            -- Source
+            vim_item.menu = ({
+              buffer = "[Buffer]",
+              nvim_lsp = "[LSP]",
+              luasnip = "[LuaSnip]",
+              nvim_lua = "[Lua]",
+              latex_symbols = "[LaTeX]",
+            })[entry.source.name]
+            return vim_item
+        end
+    }
+})
+
+local capabilities = require('cmp_nvim_lsp').update_capabilities(
+    vim.lsp.protocol.make_client_capabilities()
+)
+
+local lsp_installer = require("nvim-lsp-installer")
+lsp_installer.on_server_ready(function(server)
+    local opts = {
+        capabilities = capabilities,
+    }
+
+    server:setup(opts)
+end)
+
 
 -- Some minor tweaks to the nvim terminal
 vim.api.nvim_exec(
@@ -167,27 +260,7 @@ require "nvim-treesitter.configs".setup {
     }
 }
 
--- Do this this way so that there's no reloading when you re-run this file (that seems to cause issues)
-require "lsp_config"
-
-vim.api.nvim_exec("colorscheme earthy_ct", false)
-
-require "compe".setup {
-    enabled = true,
-    autocomplete = true,
-    debug = false,
-    min_length = 1,
-    preselect = "enable",
-    documentation = true,
-    source = {
-        path = true,
-        buffer = true,
-        calc = true,
-        nvim_lsp = true,
-        nvim_lua = true,
-        vsnip = true
-    }
-}
+vim.api.nvim_exec("colorscheme tokyonight", false)
 
 local wk = require("which-key")
 wk.setup {
@@ -244,10 +317,15 @@ Util.keybinds.add {
     { "t", "<Esc>", [[<C-\><C-n>]] },
     { "n", "<F2>", "<cmd>lua vim.lsp.buf.rename()<CR>" },
     { "n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>" },
-    { "n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>" },
+    -- { "n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>" },
+    { "n", "gd", "<cmd>Telescope lsp_definitions<CR>" },
     { "n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>" },
     { "n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>" },
-    { "n", ";", "<cmd>lua require'telescope.builtin'.buffers{ show_all_buffers = true }<CR>" },
+    { "i", "<C-P>", "<cmd>Telescope find_files<CR>"},
+    { "n", "<C-P>", "<cmd>Telescope find_files<CR>"},
+    { "n", ";;", "<cmd>Telescope buffers<CR>"},
+    { "n", ";f", "<cmd>Telescope live_grep<CR>"},
+    -- { "n", ";", "<cmd>lua require'telescope.builtin'.buffers{ show_all_buffers = true }<CR>" },
 
     -- {'n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>'},
     -- { "n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>" },
@@ -256,7 +334,7 @@ Util.keybinds.add {
     -- {'n', '<space>wr', '<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>'},
     -- {'n', '<space>wl', '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>'},
     -- {'n', '<space>D', '<cmd>lua vim.lsp.buf.type_definition()<CR>'},
-    -- {'n', '<space>e', '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>'},
+    {'n', '<leader>e', '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>'},
     -- {'n', '[d', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>'},
     -- {'n', ']d', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>'},
     -- {'n', '<space>q', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>'},
@@ -266,44 +344,56 @@ vim.api.nvim_exec([[
 augroup Format
     autocmd!
 
-    autocmd BufWritePre *.go silent! FormatWrite
+    autocmd BufWritePre *.go lua vim.lsp.buf.formatting_sync(nil, 1000)
+    autocmd BufWritePre *.py lua vim.lsp.buf.formatting_sync(nil, 1000)
     autocmd BufReadPost,BufNewFile *.tex setlocal tw=90 colorcolumn=90
 augroup END
 ]], false)
+
+-- #autocmd BufWritePre *.go silent! FormatWrite
+require('telescope').setup{
+    pickers={
+        live_grep={
+            theme="dropdown",
+        },
+        buffers={
+            theme="dropdown",
+            sort_mru=true,
+            ignore_current_buffer=true,
+        },
+    }
+}
 
 
     -- autocmd BufWritePost * FormatWrite
 
     -- autocmd BufWritePost *.tex silent! VimtexCompile
-require("format").setup {
-    ["*"] = {
-        { cmd = { "sed -i 's/[ \t]*$//'" } } -- remove trailing whitespace
-    },
-    -- lua = {
-    --     {
-    --         cmd = {
-    --             function( file)
-    --                 return string.format( "luafmt -l %s -w replace %s", vim.bo.textwidth, file)
-    --             end
-    --         }
-    --     }
-    -- },
-    go = {
-        {
-            cmd = { "gofmt -w", "goimports -w" },
-            tempfile_postfix = ".tmp"
-        }
-    },
-    javascript = {
-        { cmd = { "prettier -w", "./node_modules/.bin/eslint --fix" } }
-    },
-    python = {
-        { cmd = { "black" } }
-    },
-    rust = {
-        { cmd = { "rustfmt --emit files", } }
-    }
-}
+-- require("format").setup {
+--     ["*"] = {
+--         { cmd = { "sed -i 's/[ \t]*$//'" } } -- remove trailing whitespace
+--     },
+--     -- lua = {
+--     --     {
+--     --         cmd = {
+--     --             function( file)
+--     --                 return string.format( "luafmt -l %s -w replace %s", vim.bo.textwidth, file)
+--     --             end
+--     --         }
+--     --     }
+--     -- },
+--     go = {
+--         {
+--             cmd = { "gofmt -w", "goimports -w" },
+--             tempfile_postfix = ".tmp"
+--         }
+--     },
+--     javascript = {
+--         { cmd = { "prettier -w", "./node_modules/.bin/eslint --fix" } }
+--     },
+--     python = {
+--         { cmd = { "black" } }
+--     },
+-- }
 
 
 require('colorizer').setup(
@@ -320,23 +410,17 @@ require('colorizer').setup(
   }
 )
 
--- require'neuron'.setup{}
+local diagnostic_signs = {
+    DiagnosticSignError = "",
+    DiagnosticSignWarn = "",
+    DiagnosticSignHint = "",
+    DiagnosticSignInfo = "",
+}
 
-vim.fn.sign_define(
-    "LspDiagnosticsSignError",
-    {texthl = "LspDiagnosticsSignError", text = "", numhl = "LspDiagnosticsSignError"}
-)
-vim.fn.sign_define(
-    "LspDiagnosticsSignWarning",
-    {texthl = "LspDiagnosticsSignWarning", text = "", numhl = "LspDiagnosticsSignWarning"}
-)
-vim.fn.sign_define(
-    "LspDiagnosticsSignHint",
-    {texthl = "LspDiagnosticsSignHint", text = "", numhl = "LspDiagnosticsSignHint"}
-)
-vim.fn.sign_define(
-    "LspDiagnosticsSignInformation",
-    {texthl = "LspDiagnosticsSignInformation", text = "", numhl = "LspDiagnosticsSignInformation"}
-)
+for sign_name, sign in pairs(diagnostic_signs) do
+    vim.fn.sign_define(
+        sign_name,
+        {texthl = sign_name, text = sign, numhl = sign_name}
+    )
+end
 
-require("trouble").setup{}
