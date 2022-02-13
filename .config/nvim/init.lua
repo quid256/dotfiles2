@@ -1,41 +1,53 @@
 local vim = vim
 
+-- which features to enable
+local features = {
+    lang_lua = true,
+    lang_viml = true,
+    lang_python = true,
+    lang_go = true,
+    lang_rust = true,
+    lang_tex = false,
+    lang_beancount = false,
+
+    vimagit = false,
+    fugitive = true,
+    colorizer = false,
+}
+
 package.loaded["util"] = nil
 Util = require("util")
 
-Util.plug_install {
-    "itchyny/vim-gitbranch",
-    "itchyny/lightline.vim",
-    -- "~/.vim/bundle/earthy-vim", -- my color scheme
+local plugs = {
+    -- color scheme
     {"folke/tokyonight.nvim", branch = "main"},
-    -- 'lifepillar/vim-gruvbox8',
-    -- 'arcticicestudio/nord-vim',
-    -- 'lifepillar/vim-colortemplate',
-     -- 'folke/lsp-colors.nvim',
-    -- 'folke/lsp-trouble.nvim',
-    -- 'tpope/vim-fugitive',
-    -- 'KabbAmine/vCoolor.vim',
 
-    'norcalli/nvim-colorizer.lua',
+    -- git
+    -- "itchyny/vim-gitbranch",
+    --"itchyny/lightline.vim",
+    --
+    "nvim-lualine/lualine.nvim",
+    "mhinz/vim-signify",
 
-    -- Useful for setting up keybinds
-    "folke/which-key.nvim",
+    -- file browser
+    "lambdalisue/nerdfont.vim",
     "lambdalisue/fern.vim",
     "lambdalisue/fern-git-status.vim",
-    "lambdalisue/nerdfont.vim",
     "lambdalisue/fern-renderer-nerdfont.vim",
     "lambdalisue/fern-hijack.vim",
-    -- "airblade/vim-rooter",
 
     -- Random useful things, I should look into this (right now here as a dependency)
+    "folke/which-key.nvim",
     "nvim-lua/popup.nvim",
     "nvim-lua/plenary.nvim",
     "kyazdani42/nvim-web-devicons",
     "nvim-telescope/telescope.nvim",
+    "junegunn/vim-easy-align",
 
-    -- LSP / syntax highlighting stuff
-    "neovim/nvim-lspconfig", -- nvim base LSP configs
+    -- LSP configuration
+    "neovim/nvim-lspconfig",
     "williamboman/nvim-lsp-installer",
+
     -- completion engine
     "hrsh7th/cmp-nvim-lsp",
     "hrsh7th/cmp-buffer",
@@ -43,34 +55,37 @@ Util.plug_install {
     "hrsh7th/nvim-cmp",
     "hrsh7th/cmp-vsnip",
     "hrsh7th/vim-vsnip",
+
+    "junegunn/goyo.vim",
+
+    -- treesitter
     { "nvim-treesitter/nvim-treesitter", ["do"] = ":TSUpdate" },
 
-    "jreybert/vimagit",
-
-    "lervag/vimtex",
-    -- "sbdchd/neoformat",
-
     "machakann/vim-sandwich",
-
-    -- languages
-    --"felipesere/pie-highlight.vim",
-    -- "vmchale/dhall-vim",
-    "nathangrigg/vim-beancount",
-
-    "mhinz/vim-signify",
     "idbrii/detectindent",
-
     { "turbio/bracey.vim", ["do"] = "npm install --prefix server" },
 }
 
+for feat, feat_plug in pairs({
+    lang_tex = {"lervag/vimtex"},
+    lang_beancount = {"nathangrigg/vim-beancount"},
+    colorizer = {"norcalli/nvim-colorizer.lua"},
+    vimagit = {"jreybert/vimagit"},
+    fugitive = {"tpope/vim-fugitive"},
+}) do
+    if features[feat] then
+        for _, plug in ipairs(feat_plug) do
+            table.insert(plugs, plug)
+        end
+    end
+end
+
+Util.plug_install(plugs)
 
 Util.options.global {
     encoding = "utf-8",
-    -- Leave 2 chars above/below while scrolling
-    scrolloff = 2,
-    -- Various other settings
+    scrolloff = 2, -- Leave 2 chars above/below while scrolling
     mouse = "a", -- get the mouse to work
-    -- cursorline = false,
     modeline = true,
     pastetoggle = "<Insert>",
     termguicolors = true,
@@ -91,136 +106,65 @@ vim.o.shortmess = vim.o.shortmess .. "c"
 Util.options.window {
     wrap = false,
     number = true,
-
-    -- foldmethod="expr",
-    -- foldexpr="nvim_treesitter#foldexpr()"
+    cursorline = true,
 }
 
 Util.options.buffer {
     tabstop = 4,
     softtabstop = 4,
     expandtab = true,
-    shiftwidth = 4
+    shiftwidth = 4,
 }
 
 Util.vars.global {
     enable_bold_font = 1,
     enable_italic_font = 1,
-    -- earthy_uniform_status_lines = 0,
-    -- airline_powerline_fonts = 1,
-    -- airline_skip_empty_sections = 1,
+    mapleader = " ",
 
-    dashboard_default_executive = "telescope",
     ["fern#renderer"] = "nerdfont",
 
-    mapleader = " ",
-    -- rooter_patterns = {".git", ".vscode", "PROJECT_ROOT", "neuron.dhall"},
-    lightline = {
-        colorscheme = "tokyonight",
-        active = {
-            left = {
-                {'mode', 'paste'},
-                {'gitbranch', 'readonly', 'filename', 'modified'}
-            }
-        },
-        component_function = {
-            gitbranch = 'gitbranch#name',
-        },
-    },
+    --signify_sign_add = "▍",
+    --signify_sign_change = "▍",
+    --signify_sign_delete = "▁",
+    --signify_sign_delete_first_line = "▔",
 
     vimtex_quickfix_enabled = false,
     vimtex_compiler_method = "tectonic",
     vimtex_view_method = "mupdf",
-
-    -- earthy_ct_plugin_hi_groups = 1,
-
-    signify_sign_add = "▍",
-    signify_sign_change = "▍",
-    signify_sign_delete = "▁",
-    signify_sign_delete_first_line = "▔",
-
 }
 
-local kind_icons = {
-      Text = "",
-      Method = "",
-      Function = "",
-      Constructor = "",
-      Field = "",
-      Variable = "",
-      Class = "ﴯ",
-      Interface = "",
-      Module = "",
-      Property = "ﰠ",
-      Unit = "",
-      Value = "",
-      Enum = "",
-      Keyword = "",
-      Snippet = "",
-      Color = "",
-      File = "",
-      Reference = "",
-      Folder = "",
-      EnumMember = "",
-      Constant = "",
-      Struct = "",
-      Event = "",
-      Operator = "",
-      TypeParameter = ""
+require('lualine').setup {
+  options = {
+    icons_enabled = true,
+    theme = 'auto',
+    section_separators = { left = '', right = '' },
+    --section_separators = { left = '', right = '' },
+    component_separators = '|',
+    disabled_filetypes = {},
+    always_divide_middle = true,
+  },
+  sections = {
+    lualine_a = {'mode'},
+    lualine_b = {'branch', 'diff', 'diagnostics'},
+    lualine_c = {'filename'},
+    lualine_x = {'encoding', 'fileformat', 'filetype'},
+    lualine_y = {},
+    lualine_z = {'location'}
+  },
+  inactive_sections = {
+    lualine_a = {},
+    lualine_b = {},
+    lualine_c = {'filename'},
+    lualine_x = {'location'},
+    lualine_y = {},
+    lualine_z = {}
+  },
+  tabline = {},
+  extensions = {}
 }
-
-
--- Completion / LSP setup
-local cmp = require'cmp'
-cmp.setup({
-    snippet = {
-        expand = function(args)
-            vim.fn["vsnip#anonymous"](args.body)
-        end
-    },
-    mapping = {
-        ['<CR>'] = cmp.mapping.confirm({ select = true }),
-    },
-    sources = cmp.config.sources({
-        { name = 'nvim_lsp' },
-        { name = 'vsnip' },
-    }, {
-        { name = 'buffer' },
-    }),
-    formatting = {
-        format = function(entry, vim_item)
-            -- Kind icons
-            vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
-            -- Source
-            vim_item.menu = ({
-              buffer = "[Buffer]",
-              nvim_lsp = "[LSP]",
-              luasnip = "[LuaSnip]",
-              nvim_lua = "[Lua]",
-              latex_symbols = "[LaTeX]",
-            })[entry.source.name]
-            return vim_item
-        end
-    }
-})
-
-local capabilities = require('cmp_nvim_lsp').update_capabilities(
-    vim.lsp.protocol.make_client_capabilities()
-)
-
-local lsp_installer = require("nvim-lsp-installer")
-lsp_installer.on_server_ready(function(server)
-    local opts = {
-        capabilities = capabilities,
-    }
-
-    server:setup(opts)
-end)
-
 
 -- Some minor tweaks to the nvim terminal
-vim.api.nvim_exec(
-    [[
+vim.api.nvim_exec([[
 augroup nvim_terminal
     " Enter Terminal-mode when it's opened, and remove line numbers
     autocmd TermOpen * startinsert
@@ -237,50 +181,17 @@ augroup END
 cnoreabbrev <expr> W getcmdtype() == ":" && getcmdline() == 'W' ? 'w' : 'W'
 ]], false)
 
---; cnoreabbrev <expr> q getcmdtype() == ":" && getcmdline() == 'q' ? 'BufferClose' : 'q'
---; cnoreabbrev <expr> x getcmdtype() == ":" && getcmdline() == 'x' ? 'up \| BufferClose' : 'x'
 
--- Set up syntax highlighting with treesitter for relevant languages
-require "nvim-treesitter.configs".setup {
-    ensure_installed = {
-        "lua",
-        "c",
-        "rust",
-        "python",
-        "go",
-        "javascript",
-        "html",
-        "css",
-    }, -- one of "all", "maintained" (parsers with maintainers), or a list of languages
-    highlight = {
-        enable = true,
-    },
-    indent = {
-        enable = true,
-    }
-}
+require("my_treesitter")(features)
 
-vim.api.nvim_exec("colorscheme tokyonight", false)
+require("my_lsp")(features)
+
+vim.cmd("colorscheme tokyonight")
 
 local wk = require("which-key")
 wk.setup {
     triggers = {"<leader>", "<localleader>", "z"}
 }
-
-function GetHighlightGroups()
-    local syntax_ids = vim.fn.synstack(vim.fn.line('.'), vim.fn.col('.'))
-
-    for i, syn_id in ipairs(syntax_ids) do
-        local name = vim.fn.synIDattr(syn_id, "name")
-        local translated = vim.fn.synIDattr(vim.fn.synIDtrans(syn_id), "name")
-        print("Level "..i..": name<"..name.."> trans<"..translated..">")
-    end
-
-    if #syntax_ids == 0 then
-        print("No highlight groups found!")
-    end
-end
-
 wk.register(
     {
         c = {
@@ -295,14 +206,17 @@ wk.register(
             u = { "<cmd>PlugUpdate<cr>", "Update" }
         },
         n = { "<cmd>Fern . -drawer -toggle<cr>", "Open Fern"},
-        [" "] = {"<cmd>edit #<cr>", "Go to Previous Buffer"},
         g = {
             g = {[[<cmd>lua require'hl_show'.show_hl_captures()<cr>]], "Show highlight groups 2"},
         },
         t = { "<cmd>tabe term://.//zsh<cr>", "Term in Tab"},
-        -- h = { "<cmd>BufferPrevious<cr>", "Next Tab"},
-        -- l = { "<cmd>BufferNext<cr>", "Previous Tab"},
-        -- t = { "<cmd>BufferPick<cr>", "Pick Tab"},
+        l = {
+            name = "LSP",
+            r = {"<cmd>lua vim.lsp.buf.rename()<CR>", "Rename Identifier"},
+            a = {"<cmd>lua vim.lsp.buf.code_action()<CR>", "Code Action"},
+            e = {"<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>", "Show Diagnostics"},
+            t = {"<cmd>Telescope diagnostics<CR>", "All Diagnostics"},
+        }
     },
     { prefix = "<leader>" }
 )
@@ -315,12 +229,9 @@ Util.keybinds.add {
     { "n", "<C-H>", "<C-W><C-H>" },
     { "n", "<C-L>", "<C-W><C-L>" },
     { "t", "<Esc>", [[<C-\><C-n>]] },
-    { "n", "<F2>", "<cmd>lua vim.lsp.buf.rename()<CR>" },
     { "n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>" },
-    -- { "n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>" },
-    { "n", "gd", "<cmd>Telescope lsp_definitions<CR>" },
-    { "n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>" },
-    { "n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>" },
+    { "n", "gd", "<cmd>Telescope lsp_definitions<CR>"},
+    { "n", "gr", "<cmd>Telescope lsp_references<CR>"},
     { "i", "<C-P>", "<cmd>Telescope find_files<CR>"},
     { "n", "<C-P>", "<cmd>Telescope find_files<CR>"},
     { "n", ";;", "<cmd>Telescope buffers<CR>"},
@@ -334,7 +245,6 @@ Util.keybinds.add {
     -- {'n', '<space>wr', '<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>'},
     -- {'n', '<space>wl', '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>'},
     -- {'n', '<space>D', '<cmd>lua vim.lsp.buf.type_definition()<CR>'},
-    {'n', '<leader>e', '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>'},
     -- {'n', '[d', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>'},
     -- {'n', ']d', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>'},
     -- {'n', '<space>q', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>'},
@@ -350,12 +260,12 @@ augroup Format
 augroup END
 ]], false)
 
--- #autocmd BufWritePre *.go silent! FormatWrite
 require('telescope').setup{
     pickers={
-        live_grep={
-            theme="dropdown",
-        },
+        live_grep={theme="dropdown"},
+        lsp_references={theme="dropdown"},
+        lsp_definitions={theme="dropdown"},
+        diagnostics={theme="dropdown"},
         buffers={
             theme="dropdown",
             sort_mru=true,
@@ -364,63 +274,21 @@ require('telescope').setup{
     }
 }
 
-
-    -- autocmd BufWritePost * FormatWrite
-
-    -- autocmd BufWritePost *.tex silent! VimtexCompile
--- require("format").setup {
---     ["*"] = {
---         { cmd = { "sed -i 's/[ \t]*$//'" } } -- remove trailing whitespace
---     },
---     -- lua = {
---     --     {
---     --         cmd = {
---     --             function( file)
---     --                 return string.format( "luafmt -l %s -w replace %s", vim.bo.textwidth, file)
---     --             end
---     --         }
---     --     }
---     -- },
---     go = {
---         {
---             cmd = { "gofmt -w", "goimports -w" },
---             tempfile_postfix = ".tmp"
---         }
---     },
---     javascript = {
---         { cmd = { "prettier -w", "./node_modules/.bin/eslint --fix" } }
---     },
---     python = {
---         { cmd = { "black" } }
---     },
--- }
-
-
-require('colorizer').setup(
-  { '*' },
-  {
-      RGB      = true,         -- #RGB hex codes
-	  RRGGBB   = true,         -- #RRGGBB hex codes
-	  names    = true,         -- "Name" codes like Blue
-	  RRGGBBAA = true,         -- #RRGGBBAA hex codes
-	  rgb_fn   = true,         -- CSS rgb() and rgba() functions
-	  hsl_fn   = true,         -- CSS hsl() and hsla() functions
-	  css      = true,         -- Enable all CSS features: rgb_fn, hsl_fn, names, RGB, RRGGBB
-	  css_fn   = true,         -- Enable all CSS *functions*: rgb_fn, hsl_fn
-  }
-)
-
-local diagnostic_signs = {
-    DiagnosticSignError = "",
-    DiagnosticSignWarn = "",
-    DiagnosticSignHint = "",
-    DiagnosticSignInfo = "",
-}
-
-for sign_name, sign in pairs(diagnostic_signs) do
-    vim.fn.sign_define(
-        sign_name,
-        {texthl = sign_name, text = sign, numhl = sign_name}
+-- autocmd BufWritePost * FormatWrite
+-- autocmd BufWritePost *.tex silent! VimtexCompile
+if features.colorizer then
+    require('colorizer').setup(
+      { '*' },
+      {
+          RGB      = true,         -- #RGB hex codes
+          RRGGBB   = true,         -- #RRGGBB hex codes
+          names    = true,         -- "Name" codes like Blue
+          RRGGBBAA = true,         -- #RRGGBBAA hex codes
+          rgb_fn   = true,         -- CSS rgb() and rgba() functions
+          hsl_fn   = true,         -- CSS hsl() and hsla() functions
+          css      = true,         -- Enable all CSS features: rgb_fn, hsl_fn, names, RGB, RRGGBB
+          css_fn   = true,         -- Enable all CSS *functions*: rgb_fn, hsl_fn
+      }
     )
 end
 
